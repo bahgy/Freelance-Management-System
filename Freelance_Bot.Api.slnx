@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Freelance_Bot.Api/Freelance_Bot.Api.csproj" />
+  <Project Path="Freelance_bot.Application/Freelance_bot.Application.csproj" />
+  <Project Path="Freelance_Bot.Domain/Freelance_Bot.Domain.csproj" />
+  <Project Path="Freelance_Bot.Infrastruction/Freelance_Bot.Infrastruction.csproj" />
+</Solution>
