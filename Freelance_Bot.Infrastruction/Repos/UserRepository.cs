@@ -16,10 +16,15 @@ namespace Freelance_Bot.Infrastruction.Repos
         public async Task<User?> GetByEmailAsync(string email)
             => await _db.users.FirstOrDefaultAsync(u => u.Email == email.ToLower());
 
-        public async Task<User?> GetByTelegramChatIdAsync(string chatId)
+        public async Task<User?> GetByTelegramChatIdAsync(long chatId)
             => await _db.users.FirstOrDefaultAsync(u => u.TelegramChatId == chatId);
 
         public async Task<bool> EmailExistsAsync(string email)
             => await _db.users.AnyAsync(u => u.Email == email.ToLower());
+        public async Task SaveChangesAsync()
+        {
+            await _db.SaveChangesAsync();
+        }
+       
     }
 }

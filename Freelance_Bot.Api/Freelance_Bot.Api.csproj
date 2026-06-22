@@ -7,17 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.0.0" />
+   
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Freelance_bot.Application\Freelance_bot.Application.csproj" />
     <ProjectReference Include="..\Freelance_Bot.Infrastruction\Freelance_Bot.Infrastruction.csproj" />
+    <ProjectReference Include="..\TelegramBot\TelegramBot.csproj" />
   </ItemGroup>
 
 </Project>

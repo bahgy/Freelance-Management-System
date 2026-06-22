@@ -10,7 +10,9 @@ namespace Freelance_Bot.Domain.IRepository
     public interface IUserRepository : IRepository<User>
     {
         Task<User?> GetByEmailAsync(string email);
-        Task<User?> GetByTelegramChatIdAsync(string chatId);
+        Task<User?> GetByTelegramChatIdAsync(long chatId);
         Task<bool> EmailExistsAsync(string email);
+        Task SaveChangesAsync();
+        
     }
 }

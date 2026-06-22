@@ -39,11 +39,13 @@
 
 //app.MapControllers();
 
-//app.Run();
+//app.Run();using Freelance_Bot.Infrastruction;
+using Freelance_bot.Application;
 using Freelance_Bot.Infrastruction;
 using Freelance_Bot.Infrastruction.DB;
-using Freelance_bot.Application;
+
 using Microsoft.EntityFrameworkCore;
+using TelegramBot.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,8 +53,11 @@ builder.Services.AddDbContext<FreelancerDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddControllers();
-
+builder.Services
+    .AddControllers()
+    .AddNewtonsoftJson();
+var botToken = builder.Configuration["TelegramBot:Token"]!;
+builder.Services.AddTelegramBot(botToken);
 #region Dependency Injection
 
 builder.Services.AddModuleInfrastructureDepedences();
@@ -74,7 +79,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

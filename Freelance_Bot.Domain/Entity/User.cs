@@ -10,7 +10,7 @@ namespace Freelance_Bot.Domain.Entity
         public string FullName { get; set; }
         public string? Email { get; set; }
         public string? PasswordHash { get; set; }// To use it Later for authentication 
-        public string? TelegramChatId { get; set; }
+        public long? TelegramChatId { get; set; }
 
         // *******************to use it later for scheduling and notifications and Plan *******************
         //public string Timezone { get; set; } = "UTC";

@@ -10,14 +10,18 @@ using Freelance_Bot.Domain.IRepository;
 using Freelance_bot.Application.IServieces;
 using Freelance_Bot.Domain.Entity;
 using Freelance_Bot.Domain.Enum;
+using Freelance_bot.Application.Feature.Projects.DTOs;
 
 namespace Freelance_bot.Application.Servieces
 {
     public class ProjectService(
     IProjectRepository projectRepo,
     IEventService eventService,
-    ITaskRepository taskRepo) : IProjectService
+    ITaskRepository taskRepo,
+    IUserRepository userRepository) : IProjectService
     {
+        private readonly IUserRepository _userRepository = userRepository;
+        private readonly IProjectRepository _projectRepository = projectRepo;
         public async Task<ProjectResponse> CreateAsync(Guid userId, CreateProjectRequest request)
         {
             var project = new Project
@@ -152,7 +156,29 @@ namespace Freelance_bot.Application.Servieces
             return Task.FromResult(response);
         }
 
-       
+
+
+
+                             // this is for Bot 
+        public async Task<List<ProjectBotDto>> GetByTelegramIdAsync(long telegramId)
+        {
+            var user = await _userRepository
+                .GetByTelegramChatIdAsync(telegramId);
+
+            if (user is null)
+                return new List<ProjectBotDto>();
+            var projects = await _projectRepository
+                .GetByUserIdAsync(user.Id);
+
+            return projects.Select(p => new ProjectBotDto
+            {
+                Id = p.Id,
+                Title = p.Title
+            }).ToList();
+        }
+        
+
+
     }
 
 }

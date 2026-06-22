@@ -24,6 +24,7 @@ namespace Freelance_bot.Application
 
             services.AddScoped<ITaskService, TaskService>();
 
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEventService, EventService>();
 
             services.AddScoped<IInsightService, InsightService>();

@@ -14,6 +14,7 @@ namespace Freelance_Bot.Domain.IRepository
         Task<IEnumerable<Project>> GetActiveProjectsAsync(Guid userId);
         Task<IEnumerable<Project>> GetProjectsWithDeadlinesAsync(Guid userId, int daysAhead);
         Task RecalculateProgressAsync(Guid projectId);
+        
         Task<object> GetAnalyticsDataAsync(Guid userId); // returns structured data for AI
     }
 }

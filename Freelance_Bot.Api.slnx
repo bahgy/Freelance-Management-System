@@ -3,4 +3,5 @@
   <Project Path="Freelance_bot.Application/Freelance_bot.Application.csproj" />
   <Project Path="Freelance_Bot.Domain/Freelance_Bot.Domain.csproj" />
   <Project Path="Freelance_Bot.Infrastruction/Freelance_Bot.Infrastruction.csproj" />
+  <Project Path="TelegramBot/TelegramBot.csproj" Id="92416027-70a9-40a6-9985-b9ad9d3dcbde" />
 </Solution>

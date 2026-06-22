@@ -4,6 +4,7 @@ using Freelance_Bot.Infrastruction.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Freelance_Bot.Infrastruction.Migrations
 {
     [DbContext(typeof(FreelancerDbContext))]
-    partial class FreelancerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260523081726_AddBaseEntityColumns")]
+    partial class AddBaseEntityColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

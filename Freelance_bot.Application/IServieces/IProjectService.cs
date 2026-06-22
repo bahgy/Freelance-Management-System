@@ -1,4 +1,5 @@
-﻿using Freelance_bot.Application.Feature.Projects.Requests;
+﻿using Freelance_bot.Application.Feature.Projects.DTOs;
+using Freelance_bot.Application.Feature.Projects.Requests;
 using Freelance_bot.Application.Feature.Projects.Responses;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,10 @@ namespace Freelance_bot.Application.IServieces
             Task<IEnumerable<ProjectResponse>> GetAllAsync(Guid userId);
             Task<ProjectResponse> UpdateAsync(Guid id, Guid userId, UpdateProjectRequest request);
             Task DeleteAsync(Guid id, Guid userId);
-            //Task<AnalyticsDataResponse> GetAnalyticsDataAsync(Guid userId);
-            //Task<DashboardSummaryResponse> GetDashboardSummaryAsync(Guid userId);
-        }
+            Task<List<ProjectBotDto>> GetByTelegramIdAsync(long telegramId);
+        //Task<AnalyticsDataResponse> GetAnalyticsDataAsync(Guid userId);
+        //Task<DashboardSummaryResponse> GetDashboardSummaryAsync(Guid userId);
+    }
        
     
 }

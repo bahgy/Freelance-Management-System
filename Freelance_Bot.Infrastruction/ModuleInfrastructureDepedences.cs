@@ -23,6 +23,7 @@ namespace Freelance_Bot.Infrastruction
             services.AddScoped<INotificationRepository, NotificationRepository>();
             services.AddScoped<IReportRepository, ReportRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITaskRepository, TaskRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IReportRepository, ReportRepository>();

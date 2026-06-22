@@ -28,7 +28,6 @@
     <Folder Include="Feature\Projects\Commands\" />
     <Folder Include="Feature\Projects\Mappings\" />
     <Folder Include="Feature\Projects\Validators\" />
-    <Folder Include="Feature\Users\" />
   </ItemGroup>
 
 </Project>
